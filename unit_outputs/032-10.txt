@@ -1,0 +1,34 @@
+SINAL     NFT                         FFT                         NFT INVERSA     FFT INVERSA
+-----     -----------------------     -----------------------     -----------     -----------
+  148        4070.000       0.000             nan         nan             148             nan
+  164         331.236     135.804             nan         nan             164             nan
+   37         -23.086     402.377             nan         nan              37             nan
+  219        -238.084    -218.615             nan         nan             219             nan
+   78          43.788     -94.283             nan         nan              78             nan
+  192         -95.585     430.352             nan         nan             192             nan
+  122        -271.011      46.755             nan         nan             122             nan
+    5         153.877    -286.048             nan         nan               5             nan
+  212        -106.999    -139.001             nan         nan             212             nan
+    3         502.328      83.556             nan         nan               3             nan
+  154        -593.529    -306.843             nan         nan             154             nan
+  238         267.750     177.808             nan         nan             238             nan
+    6         424.214    -300.283             nan         nan               6             nan
+  151         216.687    -951.990             nan         nan             151             nan
+  171        -216.376       0.783             nan         nan             171             nan
+  147          45.792      24.575             nan         nan             147             nan
+    0        -216.000      -0.001             nan         nan              -0             nan
+  171          45.794     -24.571             nan         nan             171             nan
+  180        -216.373      -0.782             nan         nan             180             nan
+   13         216.673     951.995             nan         nan              13             nan
+   85         424.208     300.283             nan         nan              85             nan
+   61         267.750    -177.808             nan         nan              61             nan
+   36        -593.534     306.826             nan         nan              36             nan
+  150         502.333     -83.551             nan         nan             150             nan
+  212        -107.002     138.996             nan         nan             212             nan
+  235         153.871     286.044             nan         nan             235             nan
+   86        -271.009     -46.769             nan         nan              86             nan
+  168         -95.570    -430.359             nan         nan             168             nan
+  169          43.792      94.282             nan         nan             169             nan
+  164        -238.079     218.604             nan         nan             164             nan
+  231         -23.060    -402.383             nan         nan             231             nan
+   62         331.268    -135.798             nan         nan              62             nan

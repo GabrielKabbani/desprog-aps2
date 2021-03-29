@@ -1,5 +1,5 @@
 #include <math.h>
-
+#include <complex.h> 
 #include "fourier.h"
 
 void nft(double complex s[MAX_SIZE], double complex t[MAX_SIZE], int n, int sign) {
@@ -25,6 +25,33 @@ void nft_inverse(double complex t[MAX_SIZE], double complex s[MAX_SIZE], int n) 
 }
 
 void fft(double complex s[MAX_SIZE], double complex t[MAX_SIZE], int n, int sign) {
+    int cp=1;
+    int ci=0;
+    double complex sp[n/2];
+    double complex si[n/2];
+    double complex tp[n/2];
+    double complex ti[n/2];
+    sp[0]=s[0];
+    for (int i=1; i<n; i++){
+        if (i%2<0.000001){
+            sp[cp]=s[i];
+            cp++;
+        }else{
+            si[ci]=s[i];
+            ci++;
+        }
+    }
+
+    nft(sp, tp, n, sign);
+    nft(si, ti, n, sign);
+
+    for (int k=0; k<n/2; k++){
+        t[k]=tp[k]+(ti[k]*cexp(-2*PI*k*I/n));
+    }
+    for (int k=0; k<n/2; k++){
+        t[k + n/2]= tp[k] - (ti[k]*cexp(-2*PI*k*I/n));
+    }
+
 }
 
 void fft_forward(double complex s[MAX_SIZE], double complex t[MAX_SIZE], int n) {

@@ -1,0 +1,18 @@
+SINAL     NFT                         FFT                         NFT INVERSA     FFT INVERSA
+-----     -----------------------     -----------------------     -----------     -----------
+  155        2006.000       0.000             nan         nan             155             nan
+    1         -61.852     240.367             nan         nan               1             nan
+   12        -384.781     410.802             nan         nan              12             nan
+  108         336.440     -65.649             nan         nan             108             nan
+  133          70.999     277.000             nan         nan             133             nan
+  142          49.248     141.764             nan         nan             142             nan
+  253         108.781    -231.198             nan         nan             253             nan
+   87          -7.837      35.781             nan         nan              87             nan
+   76         252.000       0.000             nan         nan              76             nan
+   30          -7.837     -35.783             nan         nan              30             nan
+   92         108.779     231.196             nan         nan              92             nan
+  236          49.250    -141.767             nan         nan             236             nan
+  236          71.003    -277.001             nan         nan             236             nan
+  127         336.439      65.650             nan         nan             127             nan
+  172        -384.775    -410.808             nan         nan             172             nan
+  146         -61.843    -240.367             nan         nan             146             nan
