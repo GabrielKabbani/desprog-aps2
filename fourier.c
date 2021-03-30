@@ -25,14 +25,19 @@ void nft_inverse(double complex t[MAX_SIZE], double complex s[MAX_SIZE], int n) 
 }
 
 void fft(double complex s[MAX_SIZE], double complex t[MAX_SIZE], int n, int sign) {
-    int cp=1;
+    int cp=0;
     int ci=0;
+
     double complex sp[n/2];
     double complex si[n/2];
     double complex tp[n/2];
     double complex ti[n/2];
-    sp[0]=s[0];
-    for (int i=1; i<n; i++){
+    
+    if(n==1){
+        t[0] = s[0];
+        return;
+    }
+    for (int i=0; i<n; i++){
         if (i%2<0.000001){
             sp[cp]=s[i];
             cp++;
@@ -42,14 +47,14 @@ void fft(double complex s[MAX_SIZE], double complex t[MAX_SIZE], int n, int sign
         }
     }
 
-    nft(sp, tp, n, sign);
-    nft(si, ti, n, sign);
+    fft(sp, tp, (n/2), sign);
+    fft(si, ti, (n/2), sign);
 
     for (int k=0; k<n/2; k++){
-        t[k]=tp[k]+(ti[k]*cexp(-2*PI*k*I/n));
+        t[k]=tp[k] + ti[k] * (cexp(sign*2*PI*k*I/n));
     }
     for (int k=0; k<n/2; k++){
-        t[k + n/2]= tp[k] - (ti[k]*cexp(-2*PI*k*I/n));
+        t[k + n/2]= tp[k] - ti[k] * (cexp(sign*2*PI*k*I/n));
     }
 
 }
