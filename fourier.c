@@ -55,7 +55,7 @@ void fft(double complex s[MAX_SIZE], double complex t[MAX_SIZE], int n, int sign
     }
     for (int k=0; k<n/2; k++){
         t[k + n/2]= tp[k] - ti[k] * (cexp(sign*2*PI*k*I/n));
-    }
+    }  
 
 }
 
@@ -72,10 +72,60 @@ void fft_inverse(double complex t[MAX_SIZE], double complex s[MAX_SIZE], int n) 
 }
 
 void fft_forward_2d(double complex matrix[MAX_SIZE][MAX_SIZE], int width, int height) {
+    for (int i=0; i<height; i++){
+        double complex vetor[width];
+        for (int j=0; j<width; j++){
+            vetor[j]=matrix[i][j];
+        }
+        double complex t[width];
+        fft_forward(vetor, t, width);
+        for (int j=0; j<width; j++){
+            matrix[i][j]=t[j];
+        }
+    }
+    for (int i=0; i<width; i++){
+        for (int i=0; i<width; i++){
+        double complex vetor[height];
+        for (int j=0; j<height; j++){
+            vetor[j]=matrix[i][j];
+        }
+        double complex t[height];
+        fft_forward(vetor, t, height);
+        for (int j=0; j<height; j++){
+            matrix[i][j]=t[j];
+        }
+    }
+    }
 }
 
 void fft_inverse_2d(double complex matrix[MAX_SIZE][MAX_SIZE], int width, int height) {
+    for (int i=0; i<height; i++){
+        double complex vetor[width];
+        for (int j=0; j<width; j++){
+            vetor[j]=matrix[i][j];
+        }
+        double complex t[width];
+        fft_inverse(vetor, t, width);
+        for (int j=0; j<width; j++){
+            matrix[i][j]=t[j];
+        }
+    }
+    for (int i=0; i<width; i++){
+        for (int i=0; i<width; i++){
+        double complex vetor[height];
+        for (int j=0; j<height; j++){
+            vetor[j]=matrix[i][j];
+        }
+        double complex t[height];
+        fft_inverse(vetor, t, height);
+        for (int j=0; j<height; j++){
+            matrix[i][j]=t[j];
+        }
+    }
+    }
 }
+
+
 
 void filter(double complex input[MAX_SIZE][MAX_SIZE], double complex output[MAX_SIZE][MAX_SIZE], int width, int height, int flip) {
     int center_x = width / 2;
