@@ -84,17 +84,16 @@ void fft_forward_2d(double complex matrix[MAX_SIZE][MAX_SIZE], int width, int he
         }
     }
     for (int i=0; i<width; i++){
-        for (int i=0; i<width; i++){
         double complex vetor[height];
         for (int j=0; j<height; j++){
-            vetor[j]=matrix[i][j];
+            vetor[j]=matrix[j][i];
         }
         double complex t[height];
         fft_forward(vetor, t, height);
         for (int j=0; j<height; j++){
-            matrix[i][j]=t[j];
+            matrix[j][i]=t[j];
         }
-    }
+    
     }
 }
 
@@ -111,17 +110,17 @@ void fft_inverse_2d(double complex matrix[MAX_SIZE][MAX_SIZE], int width, int he
         }
     }
     for (int i=0; i<width; i++){
-        for (int i=0; i<width; i++){
+        
         double complex vetor[height];
         for (int j=0; j<height; j++){
-            vetor[j]=matrix[i][j];
+            vetor[j]=matrix[j][i];
         }
         double complex t[height];
         fft_inverse(vetor, t, height);
         for (int j=0; j<height; j++){
-            matrix[i][j]=t[j];
+            matrix[j][i]=t[j];
         }
-    }
+     
     }
 }
 
